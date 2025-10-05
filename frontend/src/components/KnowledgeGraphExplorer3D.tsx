@@ -48,7 +48,7 @@ async function mockFetchGraph(query: string, yearRange: number[], filter: string
   const year = (yearRange[0] + '-' + yearRange[1])
   const params = new URLSearchParams({ query, year, filter });
 
-  const res = await fetch(`https://35.209.14.138/graph?${params.toString()}`)
+  const res = await fetch(`https://35.209.14.138.nip.io/graph?${params.toString()}`)
 
   return await res.json();
 }
@@ -116,7 +116,7 @@ export default function KnowledgeGraphExplorer3D() {
     if (!question || question.trim().length < 2) return;
     setLoading(true);
     // Example fetch, adjust URL and params as needed
-    const res = await fetch(`https://35.209.14.138/summary?query=${encodeURIComponent(question)}&year=${yearRange[0]}-${yearRange[1]}&filter=${encodeURIComponent(selectedEnvironments.join(','))}`);
+    const res = await fetch(`https://35.209.14.138.nip.io/summary?query=${encodeURIComponent(question)}&year=${yearRange[0]}-${yearRange[1]}&filter=${encodeURIComponent(selectedEnvironments.join(','))}`);
     const data = await res.json();
     setQAResults(data); // assuming data is a list of strings
     setShowQAPopup(true);
