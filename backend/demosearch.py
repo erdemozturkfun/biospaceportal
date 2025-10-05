@@ -50,7 +50,7 @@ def build_subgraph_from_search(search_results, edges_dict, metadata_df, max_neig
                        title=res["title"], url=res["url"], sections=[res.get('section')] if 'section' in res else [])
         else:
             node_id = paper_to_idx[paper_id]
-            if 'section' in res and res['section'] not in G.nodes[node_id]['section']:
+            if 'sections' in res and res['section'] not in G.nodes[node_id]['sections']:
                 G.nodes[node_id]['sections'].append(res['section'])
         idx = res['embedid']
         neighbors = edges_dict.get(str(idx), [])[:max_neighbors]

@@ -7,12 +7,23 @@ import numpy as np
 import pandas as pd
 import os
 import json
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Or specify your frontend URL instead of "*"
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.on_event("startup")
 async def startup_event():
+
     embeddings = np.load('embeddings.npy')
     metadata_df = pd.read_csv("newmetadata.csv")
     summaries = pd.read_csv("summaries.csv")
@@ -30,8 +41,8 @@ async def startup_event():
         with open("edges.json", "r") as f:
             edges = json.load(f)
 
-    summarizer = pipeline(task="summarization",
-                          model="facebook/bart-large-cnn")
+            summarizer = pipeline(task="summarization",
+                                  model="facebook/bart-large-cnn")
 
     app.state.embeddings = embeddings
     app.state.index = index
