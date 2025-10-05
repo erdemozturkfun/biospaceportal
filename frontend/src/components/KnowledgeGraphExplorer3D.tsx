@@ -270,7 +270,7 @@ export default function KnowledgeGraphExplorer3D() {
           <input
             value={query}
             onChange={e => setQuery(e.target.value)}
-            placeholder="Ara: 'kemik erimesi', 'radius', 'microgravity'..."
+            placeholder="Search: 'bone loss', 'radius', 'microgravity'..."
             className="border border-border rounded-lg px-4 py-2 w-96 bg-input text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-smooth"
           />
           <Button
@@ -387,12 +387,12 @@ export default function KnowledgeGraphExplorer3D() {
 
 
             </Card>
-
-            <form onSubmit={handleQA} className="flex gap-2 items-center ml-4">
+            <h3><strong className="text-primary"> AI</strong> powered Q/A</h3>
+            <form onSubmit={handleQA} className="flex gap-2 items-center ">
               <input
                 value={question}
                 onChange={e => setQuestion(e.target.value)}
-                placeholder="Ara: 'kemik erimesi', 'radius', 'microgravity'..."
+                placeholder="Ask a question"
                 className="border border-border rounded-lg px-4 py-2 w-40 bg-input text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-smooth"
               />
               <Button
@@ -400,7 +400,7 @@ export default function KnowledgeGraphExplorer3D() {
                 className="bg-primary hover:bg-primary/90 text-primary-foreground glow-primary transition-smooth"
                 disabled={loading}
               >
-                Search
+                Get Answers
               </Button>
 
             </form>
@@ -421,7 +421,8 @@ export default function KnowledgeGraphExplorer3D() {
               </div>
             )}
           </aside>
-        )}
+        )
+        }
 
         {/* 3D Graph */}
         <div className="flex-1 h-full relative overflow-hidden">
@@ -524,7 +525,7 @@ export default function KnowledgeGraphExplorer3D() {
             </Card>
           )}
         </aside>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }

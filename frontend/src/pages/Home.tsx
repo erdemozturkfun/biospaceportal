@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Brain, Network, Search, Filter, BarChart3, Globe, Zap, Rocket } from "lucide-react";
+import { ArrowRight, Brain, Network, Search, Filter, BarChart3, Globe, Zap, Rocket, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          
+
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
             SpaceBio Knowledge
             <br />
@@ -18,19 +18,28 @@ const Home = () => {
               Graph Explorer
             </span>
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            Explore the interconnected world of space biology research through our immersive 3D knowledge graph. 
+            Explore the interconnected world of space biology research through our immersive 3D knowledge graph.
             Discover relationships between experiments, organisms, pathways, and environmental factors.
           </p>
-          
-          <div className="flex justify-center">
+
+          <div className="flex justify-center gap-x-5">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground glow-primary transition-smooth px-8 py-4 text-lg transform hover:scale-105">
               <Link to="/explorer">
                 <Rocket className="w-5 h-5 mr-2" />
                 Launch Explorer
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
+
+            </Button>
+            <Button asChild size="lg" className="bg-slate-600 hover:bg-emerald-600 text-primary-foreground  transition-smooth px-8 py-4 text-lg transform hover:scale-105">
+              <Link to="/trending">
+                <TrendingUp className="w-5 h-5 mr-2" />
+                Analytics
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+
             </Button>
           </div>
         </div>

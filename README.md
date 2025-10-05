@@ -6,12 +6,14 @@
 
 ## About this project
 
-This is a 3D Knowledge Graph Explorer for Space Biology research, built with modern web technologies.
+This is a AI powered space biology knowledge engine. It's purpose is to speed up space biology literature review for scientists, and ensure good cooperation between researchers and planners. It is built with modern tools.
 
 **Features:**
-- Interactive 3D graph visualization
-- Space biology knowledge exploration
-- Modern React interface with TypeScript
+- Respond to your questions with AI by giving examples of articles
+- Show articles about a concept you're looking for with NLP
+- Quick and easy access between other articles by creating a concept graph between similar articles with NLP effectively cutting time spent for literature review
+- Summarizing  an article you are looking for with one click
+- Filtering feature by year and mission stage (Takeoff, Orbit and Landing)
 
 ## How to run locally
 
@@ -19,7 +21,7 @@ Both Backend and Frontend have different instructions for running locally.
 
 ## Development
 
-You can edit files directly in GitHub or use GitHub Codespaces for development.
+You can clone the project using ```git```
 
 ## What technologies are used for this project?
 
